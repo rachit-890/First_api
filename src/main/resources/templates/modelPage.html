@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add Student</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            width: 300px;
+            margin: auto;
+        }
+
+        label, input {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        button, .back-btn {
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        .back-btn {
+            background: #ccc;
+            display: inline-block;
+            text-align: center;
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+<h1>Add New Student</h1>
+
+<form th:action="@{/student/save}" th:object="${student}" method="post">
+    <label>Name:</label>
+    <input type="text" th:field="*{name}" required/>
+
+    <label>Contact:</label>
+    <input type="text" th:field="*{contact}" required/>
+
+    <label>Course:</label>
+    <input type="text" th:field="*{course}" required/>
+
+    <button type="submit">Save</button>
+</form>
+
+<div style="text-align: center; margin-top: 15px;">
+    <a href="/students" class="back-btn">← Back to Student List</a>
+</div>
+
+</body>
+</html>

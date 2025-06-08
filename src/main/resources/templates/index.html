@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Details</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 40px auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333333;
+            margin-bottom: 30px;
+        }
+
+        .detail {
+            margin: 15px 0;
+            padding: 10px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .label {
+            font-weight: bold;
+            color: #555;
+        }
+
+        .value {
+            margin-left: 10px;
+            color: #222;
+        }
+
+        .back-btn {
+            display: block;
+            margin: 30px auto 0;
+            padding: 10px 20px;
+            background-color: #3f51b5;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background-color: #303f9f;
+        }
+    </style>
+</head>
+<body>
+<div class="container" th:object="${student}">
+    <h1>Student Information</h1>
+
+    <div class="detail">
+        <span class="label">Name:</span>
+        <span class="value" th:text="*{name}">Student Name</span>
+    </div>
+
+    <div class="detail">
+        <span class="label">Course:</span>
+        <span class="value" th:text="*{course}">Course</span>
+    </div>
+
+    <div class="detail">
+        <span class="label">Contact:</span>
+        <span class="value" th:text="*{contact}">Contact</span>
+    </div>
+
+    <div style="text-align: center; margin-top: 20px;">
+        <a href="/students" class="back-btn">← Back to Student List</a>
+    </div>
+</div>
+</body>
+</html>
