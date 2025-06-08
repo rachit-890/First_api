@@ -12,12 +12,12 @@ public class StudentController {
     }
     @GetMapping("/students")
     public List<Student> getAllStudents(){
-        return studentService.retriveall();
+        return studentService.retrieveall();
 
     }
     @GetMapping("/students/{id}")
     public Student getStudentById(@PathVariable Integer id){
-        return studentService.retriveById(id);
+        return studentService.retrieveById(id);
     }
     @PostMapping("/students/add")
     public Student addStudent(@RequestBody Student student){
@@ -27,5 +27,10 @@ public class StudentController {
     @DeleteMapping("/delete/{id}")
     public void deleteStudent(@PathVariable Integer id){
          studentService.deleteStudent(id);
+    }
+
+    @PutMapping("/update/{id}")
+    public Student updateStudent(@PathVariable Integer id,@RequestBody Student updatedStudent){
+        return studentService.updateStudent(id,updatedStudent);
     }
 }
