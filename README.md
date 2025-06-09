@@ -42,4 +42,4 @@ A full-stack web application built with Spring Boot and Thymeleaf to manage stud
 - Spring MVC
 - Spring Data JPA
 - Thymeleaf
-- H2/MySQL
+- MySQL
